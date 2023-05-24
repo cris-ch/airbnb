@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "./Logo";
 import Search from "./Search";
 
+
 const NavBar = () => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
