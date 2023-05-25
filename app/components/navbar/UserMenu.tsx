@@ -1,18 +1,19 @@
 "use client";
 
-import React, {useCallback, useState} from "react";
+import React, { useCallback, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
+import MenuItem from "./MenuItem";
 
 const UserMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);  
+  const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
 
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
-        <div 
-          onClick={() => {}} 
+        <div
+          onClick={() => {}}
           className="
             hidden
             md:block
@@ -24,12 +25,13 @@ const UserMenu = () => {
             hover:bg-neutral-100
             transition
             cursor-pointer
-          " >
-            Become a Host
-          </div>
-          <div 
-            onClick={toggleOpen}
-            className="
+          "
+        >
+          Become a Host
+        </div>
+        <div
+          onClick={toggleOpen}
+          className="
               p-4
               md:py-1
               md:px-2
@@ -43,16 +45,17 @@ const UserMenu = () => {
               cursor-pointer
               hover:shadow-md
               transition
-            ">
-              <AiOutlineMenu />
-              <div className="hidden md:block">
-                <Avatar /> 
-              </div>
-            </div>
+            "
+        >
+          <AiOutlineMenu />
+          <div className="hidden md:block">
+            <Avatar />
+          </div>
+        </div>
       </div>
 
       {isOpen && (
-        <div 
+        <div
           className="
             absolute
             rounded-xl
@@ -64,11 +67,15 @@ const UserMenu = () => {
             right-0
             top-12
             text-sm
-          ">
-            <div className="flex flex-col cursor-pointer">
-              
-            </div>
+          "
+        >
+          <div className="flex flex-col cursor-pointer">
+            <>
+              <MenuItem onClick={() => {}} label="Login" />
+              <MenuItem onClick={() => {}} label="Sign Up" />
+            </>
           </div>
+        </div>
       )}
     </div>
   );
